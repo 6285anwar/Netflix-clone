@@ -1,0 +1,42 @@
+{%extends 'admin_index.html'%}
+{%load static%}
+{%block content%}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Add USER</h4>
+                    
+                    <form class="forms-sample" action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="exampleInputName1">Name</label>
+                            <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="n">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail3">User Name</label>
+                            <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Email" name="un">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword4">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword4"
+                                placeholder="Password" name="p">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputfile">Image</label>
+                            <input type="file" class="form-control" id="exampleInputfile"
+                                placeholder="file " name="f">
+                        </div> 
+                        <button type="submit" class="btn btn-primary mr-2">Submit</button>  
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

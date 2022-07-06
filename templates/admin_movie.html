@@ -1,0 +1,52 @@
+{%extends 'admin_index.html'%}
+{%load static%}
+{%block content%}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Movies</h4>
+                    <div class="card-body">
+
+                        <div class="template-demo">
+                            <a href="{% url 'admin_addmovie' %}">
+                            <button type="button" class="btn btn-success">ADD MOVIE</button></a>
+
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    
+                                    <th>Movie Name</th>
+                                    <th>Trailer URL</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody >
+                                {% for i in movie %}
+                                <tr onclick="window.location='#'" style="cursor:pointer">
+                                    
+                                    <td>{{i.moviename}}</td>
+                                    <td>{{i.movieurl}}</td>
+
+                                    
+
+                                    
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                           
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {% endblock %}

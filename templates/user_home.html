@@ -1,0 +1,57 @@
+{%extends 'user_index.html'%}
+{%load static%}
+{%block content%}
+<div class="content-wrapper">
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">MOVIE LIST</h4>
+
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Movie Poster
+                                </th>
+                                <th>
+                                    Movie Name
+                                </th>
+                                <th>
+                                    Movie Trailer URL
+                                </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in movie %}
+                            <tr>
+                                
+                                <td class="py-1">
+                                    <img src="{{i.movieposter.url}}" alt="poster" />
+                                </td>
+                                <td>
+                                    {{i.moviename}}
+                                </td>
+                                
+                                <td>
+                                    {{i.movieurl}}
+                                </td>
+                                
+                            </tr>
+                            {% endfor %}
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  </div>
+</div>
+
+{% endblock %}
